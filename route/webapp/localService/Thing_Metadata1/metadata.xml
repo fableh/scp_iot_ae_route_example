@@ -1,0 +1,186 @@
+<?xml version="1.0" ?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+	<edmx:DataServices m:DataServiceVersion="1.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+		xmlns:sap="http://www.sap.com/Protocols/SAPData">
+		<Schema Namespace="com.sap.appiot" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__CPU" sap:semantics="timeseries">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String" Nullable="false"></Property>
+				<Property Name="CPU.usage" Type="Edm.Double"></Property>
+				<Property Name="CPU.usage.LowerThreshold73318" Type="Edm.Double" AttributeType="com.sap.iot.core.LowerThreshold"></Property>
+				<Property Name="CPU.usage.UpperThreshold98549" Type="Edm.Double" AttributeType="com.sap.iot.core.UpperThreshold"></Property>
+				<Property Name="CPU.usage.Command67428" Type="Edm.Double" AttributeType="com.sap.iot.core.TargetValue"></Property>
+				<Property Name="CPU.usage.UoM48214" Type="Edm.String" AttributeType="com.sap.iot.core.UoM"></Property>
+				<Property Name="CPU.usage.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="CPU.usage.UoM48214.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="CPU.usage.Command67428.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="CPU.usage.UpperThreshold98549.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="CPU.usage.LowerThreshold73318.Timestamp" Type="Edm.DateTimeOffset"></Property>
+			</EntityType>
+			<EntityType Name="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Image">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String" Nullable="false"></Property>
+				<Property Name="Image.ImageName" Type="Edm.String"></Property>
+				<Property Name="Image.ImageName.Timestamp" Type="Edm.DateTimeOffset"></Property>
+			</EntityType>
+			<EntityType Name="Thing">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String" Nullable="false">
+					<Documentation>
+						<LongDescription>Thing unique ID</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingISOCode" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing Language code</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingDescription" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing description</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingName" Type="Edm.String" Nullable="false">
+					<Documentation>
+						<LongDescription>Thing name</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingExternalId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing external id</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingType" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing Type ID associated with the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ObjectGroup" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Object group used to create the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="BPName" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Business partner name associated for the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="BPLandlinePhoneNumber" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Landline phone number of Business partner</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="BPMobilePhoneNumber" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Mobile phone number of Business partner</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCustomerId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Business partner ID associated for the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingRegionDescription" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Region where Thing is located</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCountryDescription" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Country where the Thing is located</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCountryId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Country code where the Thing is located</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCommunicationData" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing address details</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingLocationId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing location ID</LongDescription>
+					</Documentation>
+				</Property>
+				<NavigationProperty Name="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Image"
+					Relationship="com.sap.appiot.DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Image" FromRole="ThingEntities"
+					ToRole="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__ImageEntities"></NavigationProperty>
+				<NavigationProperty Name="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Product_Data"
+					Relationship="com.sap.appiot.DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Product_Data" FromRole="ThingEntities"
+					ToRole="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Product_DataEntities"></NavigationProperty>
+				<NavigationProperty Name="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__CPU"
+					Relationship="com.sap.appiot.DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__CPU" FromRole="ThingEntities"
+					ToRole="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__CPUEntities"></NavigationProperty>
+			</EntityType>
+			<EntityType Name="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Product_Data">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String" Nullable="false"></Property>
+				<Property Name="Product_Data.Color" Type="Edm.String"></Property>
+				<Property Name="Product_Data.Color.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="Product_Data.HD" Type="Edm.Int32"></Property>
+				<Property Name="Product_Data.HD.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="Product_Data.Inch" Type="Edm.Int32"></Property>
+				<Property Name="Product_Data.Inch.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="Product_Data.Manufactured" Type="Edm.DateTime"></Property>
+				<Property Name="Product_Data.Manufactured.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="Product_Data.Manufacturer" Type="Edm.String"></Property>
+				<Property Name="Product_Data.Manufacturer.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="Product_Data.RAM" Type="Edm.Int32"></Property>
+				<Property Name="Product_Data.RAM.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="Product_Data.Type" Type="Edm.String"></Property>
+				<Property Name="Product_Data.Type.Timestamp" Type="Edm.DateTimeOffset"></Property>
+			</EntityType>
+			<Association Name="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Image">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Image" Multiplicity="1"
+					Role="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__ImageEntities"></End>
+			</Association>
+			<Association Name="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Product_Data">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Product_Data" Multiplicity="1"
+					Role="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Product_DataEntities"></End>
+			</Association>
+			<Association Name="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__CPU">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__CPU" Multiplicity="1"
+					Role="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__CPUEntities"></End>
+			</Association>
+			<EntityContainer Name="CompositeThingsThingType" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__CPUs"
+					EntityType="com.sap.appiot.DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__CPU"></EntitySet>
+				<EntitySet Name="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Images"
+					EntityType="com.sap.appiot.DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Image"></EntitySet>
+				<EntitySet Name="Things" EntityType="com.sap.appiot.Thing"></EntitySet>
+				<EntitySet Name="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Product_Datas"
+					EntityType="com.sap.appiot.DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Product_Data"></EntitySet>
+				<AssociationSet Name="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Image"
+					Association="com.sap.appiot.DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Image">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Images" Role="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__ImageEntities"></End>
+				</AssociationSet>
+				<AssociationSet Name="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Product_Data"
+					Association="com.sap.appiot.DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Product_Data">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Product_Datas"
+						Role="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Product_DataEntities"></End>
+				</AssociationSet>
+				<AssociationSet Name="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__CPU"
+					Association="com.sap.appiot.DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__CPU">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__CPUs" Role="DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__CPUEntities"></End>
+				</AssociationSet>
+			</EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

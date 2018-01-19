@@ -1,0 +1,19 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:iot="sap.ui.iot.controls" xmlns:iotele="sap.ui.iot.elements" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="route.controller.Main" displayBlock="true">
+	<App>
+		<pages>
+			<Page title="{i18n>title}" backgroundDesign="Solid" showFooter="false">
+				<content>
+				    <iot:IoTMap centerPosition="8.8;50.09;0.0" id="__tmap0" routes="{routesModel>/routes}" enableClustering="false" zoomlevel="6">
+						<iot:routes>
+							<iotele:IoTMapRouteElement showMarkers="true" startMarkerImage="{routesModel>startMarkerImage}" endMarkerImage="{routesModel>endMarkerImage}" startMarkerAlignment="{routesModel>startMarkerAlignment}" endMarkerAlignment="{routesModel>endMarkerAlignment}" showDots="true" showDirection="true" tooltip="{routesModel>tooltip}" position="{path:'routesModel>position',templateShareable:'false'}" routeColor="{routesModel>color}">
+								<iotele:position>
+									<iotele:IoTMapRoutePositionElement latitude="{routesModel>lat}" longitude="{routesModel>lng}"/>
+								</iotele:position>
+							</iotele:IoTMapRouteElement>
+						</iot:routes> 
+					</iot:IoTMap>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
