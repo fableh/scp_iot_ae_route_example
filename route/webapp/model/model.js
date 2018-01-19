@@ -113,7 +113,12 @@ sap.ui.define([
 						lat: "49.2953241210286"
 					}
 				]
-			}
+			}];
+			oModel.setData({
+				routes: oData
+			});
+			return oModel;
+		}
 
 	};
 
