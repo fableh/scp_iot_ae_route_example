@@ -113,36 +113,7 @@ sap.ui.define([
 						lat: "49.2953241210286"
 					}
 				]
-			}, {
-				type: "by Taxi",
-				tooltip: "Paris to Chartres",
-				color: "rgb(0,76,153)",
-				startIcon: "sap-icon://taxi",
-				endIcon: "sap-icon://bus-public-transport",
-				startMarkerImage: "",
-				endMarkerImage: "",
-				position: [{
-					"lng": 2.340087890625,
-					"lat": 48.83941303819501
-				}, {
-					"lng": 2.2357177734374996,
-					"lat": 48.69458640884518
-				}, {
-					"lng": 1.9720458984374998,
-					"lat": 48.56388521347092
-				}, {
-					"lng": 1.4948272705078125,
-					"lat": 48.445827971920465
-				}, {
-					"lng": 1.4936256408691406,
-					"lat": 48.446852771568224
-				}]
-			}];
-			oModel.setData({
-				routes: oData
-			});
-			return oModel;
-		}
+			}
 
 	};
 
