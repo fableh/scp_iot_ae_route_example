@@ -3,7 +3,27 @@
 		<pages>
 			<Page title="{i18n>title}" backgroundDesign="Solid" showFooter="false">
 				<content>
-				    <iot:IoTMap centerPosition="8.8;50.09;0.0" id="__tmap0" routes="{routesModel>/routes}" enableClustering="false" zoomlevel="6">
+				    <iot:IoTMap 	things="{path:'/Things',parameters:{expand:' DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__Image, HierarchyElements, DYN_ENT_iotae_sycor_syc_sap_blogs_notebooks__CPU, DYN_ENT_com_sap_appiot_eventtypes__StandardEventType '}}" centerPosition="8.8;50.09;0.0" id="__tmap0" routes="{routesModel>/routes}" enableClustering="false" zoomlevel="6">
+						<iot:things>
+									<iotele:IoTMapElement latitude="{Latitude}" longitude="{Longitude}" thingid="{ThingId}">
+										<iotele:status>
+											<iotele:IoTStatusElement id="__element0" highSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/High}"
+												lowSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Low}"
+												mediumSeverity="{DYN_ENT_com_sap_appiot_eventtypes__StandardEventType/Medium}"/>
+										</iotele:status>
+										<iotele:thingcard>
+											<iotele:IoTThingCardElement thingCardImage="{ThingId}" MultiThingCardHeaderPosition1="{ThingName}"
+												MultiThingCardHeaderPosition2="{ThingExternalId}" SingleThingCardContactInfo1="{BusinessPartnerName}"
+												SingleThingCardContactInfo2="{BPMobilePhoneNumber}" SingleThingCardContactInfo3="{BPLandlinePhoneNumber}"
+												SingleThingCardContactsVisible="true" SingleThingCardEventsVisible="true" SingleThingCardHeaderPosition1="{ThingName}"
+												SingleThingCardHeaderPosition2="{BusinessPartnerName}" SingleThingCardHeaderPosition3="{ThingId}" SingleThingCardSecondSectionTitle="Events"
+												SingleThingCardFooterVisible="true" MultiThingCardFooterVisible="true" SingleThingCardThirdSectionTitle="Contact Info"
+												singleThingCardFooterText="Analysis Page" multiThingCardFooterText="Thing List" singleThingCardTitle="Thing Detail"
+												multiThingCardTitle="Thing Overview" multiThingCardRowSelect="oMultiRowSelect" multiThingCardFooterSelect="oMultiFooterSelect"
+												singleThingCardHeaderSelect="oSingleHeaderSelect" singleThingCardFooterSelect="oSingleFooterSelect"/>
+										</iotele:thingcard>
+									</iotele:IoTMapElement>
+								</iot:things>
 						<iot:routes>
 							<iotele:IoTMapRouteElement showMarkers="true" startMarkerImage="{routesModel>startMarkerImage}" endMarkerImage="{routesModel>endMarkerImage}" startMarkerAlignment="{routesModel>startMarkerAlignment}" endMarkerAlignment="{routesModel>endMarkerAlignment}" showDots="true" showDirection="true" tooltip="{routesModel>tooltip}" position="{path:'routesModel>position',templateShareable:'false'}" routeColor="{routesModel>color}">
 								<iotele:position>
